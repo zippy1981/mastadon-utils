@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"  # Monitor all Python dependencies in the repository
+    schedule:
+      interval: "daily"  # Check for updates daily
+    open-pull-requests-limit: 10  # Limit open pull requests to 10
+    reviewers:
+      - "zippy1981"  # Optional: request review from a specific user

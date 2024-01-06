@@ -1,0 +1,40 @@
+name: Python with Virtual Environment
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Create and activate virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install linting tool
+        run: pip install flake8  # Install flake8 within the virtual environment
+
+      - name: Lint Python code
+        run: flake8 .  # Lint all Python files in the current directory
+
+      - name: Run tests
+        run: python -m unittest
+
+      - name: Other actions (e.g., linting, code coverage)
+        run: # Add your desired actions here
+
