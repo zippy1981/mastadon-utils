@@ -34,6 +34,3 @@ jobs:
 
       - name: Run tests
         run: python -m unittest
-
-      - name: Other actions (e.g., linting, code coverage)
-        run: # Add your desired actions here
