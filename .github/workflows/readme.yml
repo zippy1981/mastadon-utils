@@ -1,0 +1,22 @@
+name: Lint README.md
+
+on:
+  push:
+    paths:
+      - 'README.md'  # Trigger only when README.md is modified
+    branches: [main]  # Trigger on pushes to the main branch
+  pull_request:
+    paths:
+      - 'README.md'  # Trigger only when README.md is modified
+    branches: [main]  # Also trigger on pull requests to main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3  # Checkout the repository
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Use Node.js version 16
+      - run: npm install -g markdownlint-cli  # Install markdownlint-cli
+      - run: markdownlint README.md  # Lint the README.md file
