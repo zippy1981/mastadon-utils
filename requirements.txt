@@ -1,2 +1,2 @@
 dynaconf==3.2.4
-Mastodon.py==1.8.1c
+Mastodon.py==1.8.1
