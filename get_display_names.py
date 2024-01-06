@@ -9,10 +9,8 @@ with open('following_accounts.csv', 'r') as f:
 
 # Create a Mastodon API instance
 mastodon = Mastodon(
-#    client_id = 'your_client_key',
-#    client_secret = 'your_client_secret',
-    access_token = settings.MASTODON_API.KEY,
-    api_base_url = f'https://{settings.MASTODON_API.SERVER or "mastadon.social"}'
+    access_token=settings.MASTODON_API.KEY,
+    api_base_url=f'https://{settings.MASTODON_API.SERVER or "mastadon.social"}'
 )
 
 # Get the display names
