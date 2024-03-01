@@ -1,6 +1,6 @@
 # Mastadon utils
 
-Some mastadon utilities I wrote
+Some mastadon utilities I wrote.
 
 ## Latest build statuses
 
